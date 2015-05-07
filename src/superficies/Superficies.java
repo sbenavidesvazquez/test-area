@@ -1,7 +1,7 @@
 package superficies;
 
-import java.util.Scanner;
 import javax.swing.JOptionPane;
+import static superficies.Vista.imprimir;
 import static superficies.Vista.introducir;
 
 /**
@@ -11,17 +11,17 @@ import static superficies.Vista.introducir;
  */
 public class Superficies {
 
-    private static Scanner sc;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
-        sc = new Scanner(System.in);
 
         String fig=JOptionPane.showInputDialog("Figura para calcular el area:\nCuadrado\nCirculo\nRectangulo\nTriangulo\n(escriba todo en minusculas)");
-        Area(fig);
+        
+        
+        imprimir(Area(fig),fig);
         
 
     }
@@ -43,19 +43,19 @@ public class Superficies {
                 base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del rectangulo?"));
                 cont.setBase(base);
                 altura=Float.parseFloat(JOptionPane.showInputDialog("¿Altura del rectangulo?"));
-                cont.setBase(altura);
+                cont.setAltura(altura);
                introducir(cont);
                 area = cont.getBase() * cont.getAltura();
                 break;
             case "triangulo":base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del triangulo?"));
                 cont.setBase(base);
                 altura=Float.parseFloat(JOptionPane.showInputDialog("¿Altura del triangulo?"));
-                cont.setBase(altura);
+                cont.setAltura(altura);
                 introducir(cont);
                 area =(float) 0.5* cont.getBase() * cont.getAltura();
                 break;
             case "circulo":radio=Float.parseFloat(JOptionPane.showInputDialog("¿Radio del circulo?"));
-                cont.setBase(radio);
+                cont.setRadio(radio);
                 introducir(cont);
                 area= (float) (3.14159265 * cont.getRadio());
                 break;

@@ -16,7 +16,7 @@ public class Vista {
     
     }
         
-        public static void imprimir(int rel,String fi){
+        public static void imprimir(float rel,String fi){
             JOptionPane.showMessageDialog(null, "El area de tu "+fi+" es igual a "+rel);
         }
     
