@@ -1,6 +1,8 @@
 package superficies;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+//import static superficies.Vista.introducir;
 
 /**
  * Examen de MVC 3ª Avaliación
@@ -15,15 +17,14 @@ public class Superficies {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String shapeType;
 
         sc = new Scanner(System.in);
 
-        System.out.println("What shape would you like to find the area of? (square, circle, triangle, rectangle):");
-        shapeType = sc.nextLine();
-        System.out.println("You said: " + shapeType);
-
-        if (shapeType.equals("square")) {
+        String fig=JOptionPane.showInputDialog("Figura para calcular el area:\nCuadrado\nCirculo\nRectangulo\nTriangulo\n(escriba todo en minusculas)");
+        Area(fig);
+        
+        
+        if (fig.equals("square")) {
             //add area calculations for square
             float squareArea;
             float sideLength;
@@ -33,7 +34,7 @@ public class Superficies {
             squareArea = sideLength * sideLength;
             System.out.println("The area for your square: " + squareArea);
 
-        }
+        }/*
         if (shapeType.equals("rectangle")) {
             //add area calculations for rectangle here
             float sideLength;
@@ -72,8 +73,47 @@ public class Superficies {
             circleArea = radius * radius;
             circleArea = (float) (3.14159265 * circleArea);
             System.out.println("Your Circles area is " + circleArea);
+                
 
+        }*/
+
+    }
+    
+    public static float Area(String ar){
+        float area=0;
+        float base=0;
+        float altura=0;
+        float radio=0;
+        //ModeloCu cont=new ModeloCu();
+        
+        switch(ar){
+            case "cuadrado":base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del cuadrado?"));
+           // cont.setBase(base);
+            //introducir(cont);
+            area= base * base;
+                break;
+            case "rectangulo":
+                base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del rectangulo?"));
+                //cont.setBase(base);
+                altura=Float.parseFloat(JOptionPane.showInputDialog("¿Altura del rectangulo?"));
+                //cont.setBase(altura);
+               // introducir(cont);
+                area = base * altura;
+                break;
+            case "triangulo":base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del triangulo?"));
+               // cont.setBase(base);
+                altura=Float.parseFloat(JOptionPane.showInputDialog("¿Altura del triangulo?"));
+                //cont.setBase(altura);
+                //introducir(cont);
+                area =(float) 0.5*base * altura;
+                break;
+            case "circulo":radio=Float.parseFloat(JOptionPane.showInputDialog("¿Radio del circulo?"));
+                //cont.setBase(radio);
+                //introducir(cont);
+                area= (float) (3.14159265 * radio);
+                break;
+                
         }
-
+        return area;
     }
 }
