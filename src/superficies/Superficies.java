@@ -20,12 +20,18 @@ public class Superficies {
 
         String fig=JOptionPane.showInputDialog("Figura para calcular el area:\nCuadrado\nCirculo\nRectangulo\nTriangulo\n(escriba todo en minusculas)");
         
+        float resul=Area(fig);
         
-        imprimir(Area(fig),fig);
+        imprimir(resul,fig);
         
 
     }
     
+    /**
+     * Switch que servira para saver que area debe de hallar.
+     * @param ar String que sera la figura
+     * @return float es el area de la figura
+     */
     public static float Area(String ar){
         float area=0;
         float base=0;
@@ -35,16 +41,16 @@ public class Superficies {
         
         switch(ar){
             case "cuadrado":base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del cuadrado?"));
-           cont.setBase(base);
-            introducir(cont);
-            area= cont.getBase() * cont.getBase();
+                cont.setBase(base);
+                introducir(cont);
+                area= cont.getBase() * cont.getBase();
                 break;
             case "rectangulo":
                 base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del rectangulo?"));
                 cont.setBase(base);
                 altura=Float.parseFloat(JOptionPane.showInputDialog("¿Altura del rectangulo?"));
                 cont.setAltura(altura);
-               introducir(cont);
+                introducir(cont);
                 area = cont.getBase() * cont.getAltura();
                 break;
             case "triangulo":base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del triangulo?"));
