@@ -40,28 +40,19 @@ public class Superficies {
         Modelo cont=new Modelo();
         
         switch(ar){
-            case "cuadrado":base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del cuadrado?"));
-                cont.setBase(base);
+            case "cuadrado":
                 introducir(cont);
                 area= cont.getBase() * cont.getBase();
                 break;
             case "rectangulo":
-                base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del rectangulo?"));
-                cont.setBase(base);
-                altura=Float.parseFloat(JOptionPane.showInputDialog("¿Altura del rectangulo?"));
-                cont.setAltura(altura);
                 introducir(cont);
                 area = cont.getBase() * cont.getAltura();
                 break;
-            case "triangulo":base=Float.parseFloat(JOptionPane.showInputDialog("¿Base del triangulo?"));
-                cont.setBase(base);
-                altura=Float.parseFloat(JOptionPane.showInputDialog("¿Altura del triangulo?"));
-                cont.setAltura(altura);
+            case "triangulo":
                 introducir(cont);
                 area =(float) 0.5* cont.getBase() * cont.getAltura();
                 break;
-            case "circulo":radio=Float.parseFloat(JOptionPane.showInputDialog("¿Radio del circulo?"));
-                cont.setRadio(radio);
+            case "circulo":
                 introducir(cont);
                 area= (float) (3.14159265 * cont.getRadio());
                 break;
